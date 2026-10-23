@@ -1,13 +1,124 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Project</title>
-    <link rel="stylesheet" href="style.css" />
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NYC by Mood helps people choose one thoughtful Manhattan destination based on mood, place type, and area.">
+    <title>NYC by Mood | Find Your Kind of City</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <!-- START BELOW -->
-     
-  </body>
-</html>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- SITE HEADER AND NAVIGATION -->
+    <header class="site-header">
+      <div class="page-shell">
+        <a class="brand" href="index.html" aria-label="NYC by Mood home">
+          <span aria-hidden="true">☼</span> NYC by Mood
+        </a>
+
+        <nav aria-label="Primary navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" aria-current="page">Explore</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <!-- HERO SECTION -->
+      <section class="content-section hero" aria-labelledby="hero-title">
+        <p class="eyebrow">Manhattan, at your pace</p>
+        <h1 id="hero-title">Find your kind of city.</h1>
+        <p class="intro-copy">
+          Choose a mood, a place type, and an area. We'll find one spot to
+          match your moment.
+        </p>
+        <p><a class="button button-primary" href="#mood">Start choosing</a></p>
+
+        <figure class="art-placeholder">
+          <p>City illustration placeholder</p>
+          <figcaption>
+            The finished design will include the NYC by Mood city illustration.
+          </figcaption>
+        </figure>
+      </section>
+
+      <form aria-label="Manhattan recommendation preferences">
+        <!-- MOOD SELECTION SECTION -->
+        <section id="mood" class="content-section" aria-labelledby="mood-title">
+          <p class="step-number" aria-hidden="true">1</p>
+          <h2 id="mood-title">Your mood</h2>
+          <p>What sounds good today?</p>
+          <fieldset class="choice-group">
+            <legend class="visually-hidden">Choose a mood</legend>
+            <button class="choice is-selected" type="button" aria-pressed="true">
+              <span aria-hidden="true">✓</span> Quiet
+            </button>
+            <button class="choice" type="button" aria-pressed="false">Creative</button>
+            <button class="choice" type="button" aria-pressed="false">Social</button>
+            <button class="choice" type="button" aria-pressed="false">Romantic</button>
+            <button class="choice" type="button" aria-pressed="false">Productive</button>
+            <button class="choice" type="button" aria-pressed="false">Adventurous</button>
+          </fieldset>
+        </section>
+
+        <!-- PLACE TYPE SECTION -->
+        <section class="content-section" aria-labelledby="place-type-title">
+          <p class="step-number" aria-hidden="true">2</p>
+          <h2 id="place-type-title">Your kind of place</h2>
+          <p>Pick one kind of little detour.</p>
+          <fieldset class="choice-group">
+            <legend class="visually-hidden">Choose a place type</legend>
+            <button class="choice is-selected" type="button" aria-pressed="true">
+              <span aria-hidden="true">✓</span> Cafe
+            </button>
+            <button class="choice" type="button" aria-pressed="false">Bookstore</button>
+            <button class="choice" type="button" aria-pressed="false">Museum</button>
+            <button class="choice" type="button" aria-pressed="false">Park</button>
+            <button class="choice" type="button" aria-pressed="false">Library</button>
+            <button class="choice" type="button" aria-pressed="false">Restaurant</button>
+          </fieldset>
+        </section>
+
+        <!-- AREA SELECTION SECTION -->
+        <section class="content-section" aria-labelledby="area-title">
+          <p class="step-number" aria-hidden="true">3</p>
+          <h2 id="area-title">Your area</h2>
+          <p>Where in Manhattan?</p>
+          <fieldset class="choice-group">
+            <legend class="visually-hidden">Choose an area</legend>
+            <button class="choice" type="button" aria-pressed="false">Downtown</button>
+            <button class="choice is-selected" type="button" aria-pressed="true">
+              <span aria-hidden="true">✓</span> Midtown
+            </button>
+            <button class="choice" type="button" aria-pressed="false">Uptown</button>
+            <button class="choice" type="button" aria-pressed="false">Anywhere</button>
+          </fieldset>
+        </section>
+
+        <!-- SELECTION SUMMARY AND PRIMARY ACTION -->
+        <section id="how-it-works" class="content-section selection-summary" aria-labelledby="summary-title">
+          <h2 id="summary-title">Your choices</h2>
+          <p class="selection-line">Quiet / Cafe / Midtown</p>
+          <p>One thoughtful pick. No endless lists.</p>
+          <p>
+            <a class="button button-primary" href="recommendation.html">
+              Show my recommendation
+            </a>
+          </p>
+        </section>
+      </form>
+    </main>
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer">
+      <div class="page-shell">
+        <p>Made for little detours in Manhattan.</p>
+        <p>NYC by Mood / 2026</p>
+      </div>
+    </footer>
+  
+
+</body></html>
