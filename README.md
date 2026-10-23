@@ -1,75 +1,68 @@
-## **Instructions**
+# NYC by Mood
 
-### **Step-by-Step: Getting Set Up**
+NYC by Mood helps a young adult choose one thoughtful Manhattan destination
+without sorting through a long list of results. The user selects a mood, a type
+of place, and an area, then receives one recommendation and can open a detailed
+place view.
 
+## Assignment 5: HTML Structure
 
-**1\. Click the green "Use this template" button**
+This repository translates the existing Assignment 4 high-fidelity mockups
+into semantic HTML and applies the project's basic Style Tile. The pages remain
+in normal document flow for this assignment; responsive layout systems will be
+added later.
 
-This creates a brand new repository under your own GitHub account, pre-loaded with the starting files.
+### Section inventory
 
-**2\. Name your repository**
+Each page contains four to six main content sections. The shared site header/navigation and footer sit outside that page-specific count.
 
-Use this naming convention:
+`index.html`
 
-`nyu-f26-lastname-firstname`
+1. Hero and entry action
+2. Mood selection
+3. Place-type selection
+4. Manhattan-area selection
+5. Selection summary and primary action
 
-**3\. Click "Create repository from template"**
+`recommendation.html`
 
-GitHub copies the files and takes you to your new repo page.
+1. Recommendation introduction and active choices
+2. Recommendation illustration placeholder
+3. Place summary
+4. Recommendation actions
 
-**4\. Click the green "Code" button → "Create Codespace"**
+`detail.html`
 
-**5\. Wait about 15 minutes while it boots up**
+1. Place heading and tags
+2. Place story and illustration placeholder
+3. Visit information
+4. Visit actions
 
-This is normal. Codespaces is spinning up a virtual computer for you in the cloud, installing dependencies, and opening VS Code in your browser. Grab a sip of water while it loads.
+### Style Tile applied
 
-**6\. You're ready**
+- Heading font: EB Garamond
+- Body and control font: Lato
+- Primary: `#245C4B`
+- Accent: `#EEC06F`
+- Text: `#202B26`
+- Background: `#FFFDF9`
+- Border: `#D4D8D1`
+- Base spacing unit: 8px
 
-When the browser tab opens to VS Code, open the `style.css` file in the file explorer on the left. The base styles are already written for you, and each rule has **STEP** comments showing where the grid properties go. That's your starting point — we'll type the grid code together in class, one step at a time.
+Illustrations are represented by labeled placeholders because Assignment 5
+specifically leaves images and media for a later stage.
 
----
+## AI use acknowledgement
 
-## **GitHub Codespaces — A Brief Guide**
+I used OpenAI Codex to help translate my existing Assignment 4 mockups and
+Style Tile into an initial HTML and CSS implementation. The project concept,
+user flow, content, colors, typography, page sections, and responsive plans
+were already established in my own mockups. I reviewed the generated structure
+against those mockups and used the output as implementation support rather than
+as a source of new design ideas.
 
-### **What Is It?**
+## Next step
 
-Codespaces is a development environment that runs entirely in your browser. Instead of installing software on your own computer, you get a virtual computer in the cloud — pre-configured and ready to code — that you access through a web browser. Microsoft (which owns GitHub) hosts it.
-
-### **What It Saves Us From**
-
-Normally, getting a development environment set up requires installing and configuring a bunch of tools:
-
-* A code editor (VS Code)  
-* A terminal (command line)  
-* Git (version control)  
-* Node.js, Python, or whatever runtime the project needs  
-* Extensions, themes, settings
-
-Each one of these can break in unique ways depending on your operating system, your computer's permissions, or just bad luck. **Codespaces eliminates all of that.** You click one button and you're in a fully working environment. No "it works on my machine" problems.
-
-### **How It Works (High Level)**
-
-1. A project lives in a GitHub repository.  
-2. You click the green **Code** button and select **Open with Codespaces**.  
-3. GitHub spins up a lightweight virtual machine running Linux, installs the project's dependencies automatically, and opens a browser-based version of VS Code.  
-4. You code, save, and commit just like you would on your local machine.  
-5. When you're done, you stop the Codespace. Next time you come back, everything is exactly where you left it.
-
-The environment is defined by a file called `devcontainer.json` (or `.devcontainer/`) in the repository. It's like a recipe that tells GitHub "this project needs X, Y, and Z."
-
-### **The Catch: It's Slow to Start (And Why)**
-
-A cold start takes **1–3 minutes**. Here's why:
-
-* **A new virtual machine has to boot.** Codespaces isn't "running" until you open it. There's no always-on computer — one is created for you on demand. That means spinning up an OS from scratch.  
-* **Your dependencies install.** If the project requires packages or libraries, Codespaces runs the install process when it starts. This is the same `npm install` or `pip install` you'd run locally — it just happens automatically.  
-* **Extensions and settings sync.** VS Code loads your extensions, themes, and preferences from your GitHub account.
-
-**Once it's running, it's fast.** The delay is only on the first launch of the day (or after you've manually stopped the Codespace). If you keep it open between sessions, there's no wait.
-
-### **Tips**
-
-* **Don't close your Codespace mid-session.** Just leave the tab open. If you close it, stop the Codespace from the GitHub dashboard so it doesn't eat into your monthly usage hours.  
-* **Your work is saved automatically.** Even if the Codespace stops, the files are stored on GitHub. You won't lose anything.  
-* **You get a fixed number of free hours per month** through the GitHub Student Developer Pack. A cold start uses some of those hours just booting up, so it's worth keeping one Codespace alive while you're actively working.  
-* **If you need to work offline,** you can always install VS Code and Git locally instead but it does take some set up — Codespaces is a convenience, not a requirement.
+The next coding assignment will add project data and repeated HTML elements
+with JavaScript. Layout, responsive behavior, and final media will be developed
+in later iterations.
