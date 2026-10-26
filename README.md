@@ -163,7 +163,3 @@ through the same submitted link.
 **One thing I couldn't figure out:**
 
 - I still need to choose the simplest way to preserve the user's mood, place type, and area across separate HTML pages without adding unnecessary complexity.
-
-**Partner spot-check:**
-
-- Pending: ask a classmate to compare one mockup section with the matching HTML section and record their specific observation here.
