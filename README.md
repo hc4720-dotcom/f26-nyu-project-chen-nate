@@ -142,3 +142,28 @@ https://github.com/hc4720-dotcom/f26-nyu-project-chen-nate
 Submit the repository URL rather than a Codespaces URL. Brightspace already
 contains this repository URL; updates pushed to this repository are available
 through the same submitted link.
+
+## Structure Audit — October 26, 2026
+
+**Fixed today:**
+
+- Added a complete top-to-bottom section inventory at the top of `index.html`.
+- Compared the selection, recommendation, and detail pages with the Assignment 4 desktop mockups. All required sections are present and in the intended content order.
+- Kept useful section headings for screen readers but visually hid the three headings that do not appear in the mockups.
+- Removed a redundant hero background declaration from the CSS.
+- Verified that each page has one `h1`, section headings use `h2`, the Google fonts and `:root` color variables are connected, and internal navigation targets exist.
+- Verified that `script.js` is loaded only on the page containing `#mood-options`, so it does not create a missing-element error on the other pages.
+
+**Still missing (building before the layout assignment):**
+
+- [ ] Replace the labeled illustration placeholders with the final project illustrations when media is added.
+- [ ] Build the responsive desktop and mobile arrangements shown in the mockups.
+- [ ] Connect the choice buttons to the summary and carry the selected values to the recommendation page.
+
+**One thing I couldn't figure out:**
+
+- I still need to choose the simplest way to preserve the user's mood, place type, and area across separate HTML pages without adding unnecessary complexity.
+
+**Partner spot-check:**
+
+- Pending: ask a classmate to compare one mockup section with the matching HTML section and record their specific observation here.
