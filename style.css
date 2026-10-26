@@ -128,10 +128,6 @@ figure {
   padding-top: var(--space-5);
 }
 
-.hero {
-  background: var(--color-background);
-}
-
 .eyebrow {
   color: var(--color-primary);
   font-size: 0.9rem;
