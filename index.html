@@ -1,10 +1,14 @@
 <!doctype html>
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NYC by Mood helps people choose one thoughtful Manhattan destination based on mood, place type, and area.">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NYC by Mood helps people choose one thoughtful Manhattan destination based on mood, place type, and area."
+    />
     <title>NYC by Mood | Find Your Kind of City</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- START BELOW -->
@@ -53,14 +57,8 @@
           <p>What sounds good today?</p>
           <fieldset class="choice-group">
             <legend class="visually-hidden">Choose a mood</legend>
-            <button class="choice is-selected" type="button" aria-pressed="true">
-              <span aria-hidden="true">✓</span> Quiet
-            </button>
-            <button class="choice" type="button" aria-pressed="false">Creative</button>
-            <button class="choice" type="button" aria-pressed="false">Social</button>
-            <button class="choice" type="button" aria-pressed="false">Romantic</button>
-            <button class="choice" type="button" aria-pressed="false">Productive</button>
-            <button class="choice" type="button" aria-pressed="false">Adventurous</button>
+            <div id="mood-options"></div>
+            <noscript><p>Please enable JavaScript to load the mood choices.</p></noscript>
           </fieldset>
         </section>
 
@@ -119,6 +117,6 @@
         <p>NYC by Mood / 2026</p>
       </div>
     </footer>
-  
-
-</body></html>
+    <script src="script.js"></script>
+  </body>
+</html>
