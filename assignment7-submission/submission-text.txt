@@ -1,0 +1,5 @@
+Repository URL:
+https://github.com/hc4720-dotcom/f26-nyu-project-chen-nate
+
+Layout note:
+I used CSS Grid for the page shell and the main content groups because the mockup has clear rows and columns. On the selection page, the hero becomes two columns on desktop, and the mood, place, and area sections sit side by side. The recommendation page places the illustration next to the place information, while the detail page places the visit panel beside the story. At widths below 800px, those larger sections return to one column. The mood and area choices stay in two columns, and the place choices stay in three, matching my Assignment 4 notes. Flexbox handles only single rows such as navigation, tags, and action buttons. I also used minmax(0, 1fr) and tested at 375px and 1440px to prevent horizontal scrolling.
