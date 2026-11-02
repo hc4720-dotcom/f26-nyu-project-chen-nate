@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Lato:wght@400;700&display=swap");
 
+/*
+  ASSIGNMENT 7 LAYOUT PLAN
+  - Use one-column CSS Grid page shells at small widths.
+  - Keep mood and area choices in two columns and place types in three.
+  - At the mockup breakpoint, place the hero image beside its text, arrange the
+    three preference sections in columns, and split recommendation/detail views.
+  - Use Flexbox only for single rows such as navigation, tags, and action buttons.
+*/
+
 /* === RESET === */
 *,
 *::before,
@@ -54,7 +63,7 @@ h3,
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: var(--space-3);
   max-width: 16ch;
 }
@@ -73,10 +82,13 @@ figure {
 }
 
 .page-shell {
+  display: grid;
+  gap: var(--space-3);
   margin: 0 auto;
-  max-width: 1120px;
+  max-width: 1440px;
   padding-left: var(--space-3);
   padding-right: var(--space-3);
+  width: 100%;
 }
 
 .skip-link {
@@ -99,21 +111,71 @@ figure {
   padding-top: var(--space-3);
 }
 
+.site-header .page-shell {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
 .brand {
   display: inline-block;
   font-size: 1.75rem;
-  margin-bottom: var(--space-2);
+  margin-bottom: 0;
   text-decoration: none;
 }
 
 .nav-list {
+  display: none;
+  gap: var(--space-4);
   list-style: none;
 }
 
 .nav-list li {
-  display: inline-block;
-  margin-bottom: var(--space-1);
-  margin-right: var(--space-3);
+  margin: 0;
+}
+
+.mobile-nav {
+  position: relative;
+}
+
+.mobile-nav summary {
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  color: var(--color-primary);
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 48px;
+  min-width: 64px;
+  padding: var(--space-1) var(--space-2);
+}
+
+.mobile-nav summary::marker {
+  content: "";
+}
+
+.mobile-nav[open] nav {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--space-2);
+  position: absolute;
+  right: 0;
+  top: calc(100% + var(--space-1));
+  width: 180px;
+  z-index: 5;
+}
+
+.mobile-nav ul {
+  display: grid;
+  gap: var(--space-2);
+  list-style: none;
+}
+
+.mobile-nav a {
+  font-weight: 700;
 }
 
 .nav-list a {
@@ -126,6 +188,13 @@ figure {
   border-bottom: 1px solid var(--color-border);
   padding-bottom: var(--space-5);
   padding-top: var(--space-5);
+}
+
+/* The hero is a grid so its text and illustration can change arrangement without changing source order. */
+.hero {
+  display: grid;
+  gap: 0;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .eyebrow {
@@ -146,8 +215,7 @@ figure {
   display: inline-block;
   font: inherit;
   font-weight: 700;
-  margin-bottom: var(--space-1);
-  margin-right: var(--space-1);
+  margin: 0;
   min-height: 48px;
   padding: 12px var(--space-3);
   text-align: center;
@@ -169,7 +237,10 @@ figure {
 
 .choice {
   cursor: pointer;
-  min-width: 144px;
+  min-width: 0;
+  padding-left: var(--space-1);
+  padding-right: var(--space-1);
+  width: 100%;
 }
 
 .choice.is-selected {
@@ -178,9 +249,28 @@ figure {
   color: var(--color-background);
 }
 
+.choice.is-selected::before {
+  content: "✓ ";
+}
+
 .choice-group {
   border: 0;
   margin-top: var(--space-2);
+}
+
+/* Each choice group uses a stable grid so options stay easy to compare at both mockup widths. */
+.choice-grid {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.mood-grid,
+.area-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.place-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .step-number {
@@ -206,7 +296,7 @@ figure {
   border: 1px solid var(--color-border);
   border-radius: 24px;
   margin-top: var(--space-4);
-  max-width: 720px;
+  max-width: 100%;
   padding: var(--space-5) var(--space-3);
   text-align: center;
 }
@@ -224,6 +314,9 @@ figure {
 }
 
 .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
   list-style: none;
 }
 
@@ -233,13 +326,12 @@ figure {
   color: var(--color-text);
   display: inline-block;
   font-weight: 700;
-  margin-bottom: var(--space-1);
-  margin-right: var(--space-1);
+  margin: 0;
   padding: 6px var(--space-2);
 }
 
 .place-summary {
-  max-width: 720px;
+  max-width: 520px;
 }
 
 .information-panel {
@@ -248,6 +340,16 @@ figure {
   border-radius: 24px;
   margin-top: var(--space-5);
   padding: var(--space-4);
+}
+
+.action-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.action-row .button {
+  width: 100%;
 }
 
 .place-facts dt {
@@ -273,6 +375,191 @@ figure {
 
 .site-footer p {
   margin-bottom: var(--space-1);
+}
+
+/* Assignment 4 annotation: stack on mobile and use side-by-side arrangements on desktop. */
+@media (min-width: 800px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .page-shell {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+
+  .nav-list {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .recommendation-intro h1,
+  .detail-intro h1 {
+    max-width: none;
+  }
+
+  .hero {
+    align-items: center;
+    column-gap: var(--space-6);
+    grid-template-areas:
+      "eyebrow art"
+      "title art"
+      "copy art"
+      "action art";
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+  }
+
+  .hero .eyebrow {
+    grid-area: eyebrow;
+  }
+
+  .hero h1 {
+    grid-area: title;
+  }
+
+  .hero .intro-copy {
+    grid-area: copy;
+  }
+
+  .hero-action {
+    grid-area: action;
+  }
+
+  .hero .art-placeholder {
+    grid-area: art;
+    margin: 0;
+  }
+
+  .preference-form {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .preference-form > .content-section {
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+  }
+
+  .preference-form > .content-section:first-child {
+    padding-left: 0;
+  }
+
+  .preference-form > .content-section:nth-child(3) {
+    padding-right: 0;
+  }
+
+  .selection-summary {
+    align-items: center;
+    column-gap: var(--space-4);
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.55fr);
+  }
+
+  .selection-summary .selection-line,
+  .selection-summary > p:nth-of-type(2) {
+    grid-column: 1;
+  }
+
+  .selection-summary .summary-action {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .summary-action .button {
+    width: 100%;
+  }
+
+  /* The recommendation grid keeps one result while giving the image and place details equal visual weight. */
+  .recommendation-page {
+    column-gap: var(--space-6);
+    grid-template-areas:
+      "intro intro"
+      "visual summary"
+      "visual actions";
+    grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+  }
+
+  .recommendation-intro {
+    grid-area: intro;
+  }
+
+  .recommendation-visual {
+    grid-area: visual;
+  }
+
+  .recommendation-summary {
+    align-self: end;
+    grid-area: summary;
+  }
+
+  .recommendation-actions {
+    align-self: start;
+    grid-area: actions;
+  }
+
+  .recommendation-visual,
+  .recommendation-summary,
+  .recommendation-actions {
+    border-bottom: 0;
+  }
+
+  .action-row {
+    flex-direction: row;
+  }
+
+  .action-row .button {
+    flex: 1;
+  }
+
+  /* The detail grid separates the story from practical visit information, matching the desktop mockup. */
+  .detail-page {
+    column-gap: var(--space-6);
+    grid-template-areas:
+      "intro intro"
+      "story information"
+      "story actions";
+    grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
+    row-gap: 0;
+  }
+
+  .detail-intro {
+    grid-area: intro;
+  }
+
+  .detail-story {
+    border-bottom: 0;
+    grid-area: story;
+  }
+
+  .detail-information {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    grid-area: information;
+    margin-top: var(--space-5);
+  }
+
+  .detail-actions {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 0 0 24px 24px;
+    border-top: 0;
+    grid-area: actions;
+    padding: 0 var(--space-4) var(--space-4);
+    text-align: center;
+  }
+
+  .detail-actions .button {
+    width: 100%;
+  }
+
+  .site-footer .page-shell {
+    align-items: center;
+    grid-template-columns: 1fr auto;
+  }
 }
 
 .visually-hidden {

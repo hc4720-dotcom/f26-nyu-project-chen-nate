@@ -54,10 +54,19 @@
             <li><a href="#how-it-works">How it works</a></li>
           </ul>
         </nav>
+        <details class="mobile-nav">
+          <summary aria-label="Open navigation">Menu</summary>
+          <nav aria-label="Mobile navigation">
+            <ul>
+              <li><a href="index.html" aria-current="page">Explore</a></li>
+              <li><a href="#how-it-works">How it works</a></li>
+            </ul>
+          </nav>
+        </details>
       </div>
     </header>
 
-    <main id="main-content" class="page-shell">
+    <main id="main-content" class="page-shell selection-page">
       <!-- HERO SECTION -->
       <section class="content-section hero" aria-labelledby="hero-title">
         <p class="eyebrow">Manhattan, at your pace</p>
@@ -66,7 +75,7 @@
           Choose a mood, a place type, and an area. We'll find one spot to
           match your moment.
         </p>
-        <p><a class="button button-primary" href="#mood">Start choosing</a></p>
+        <p class="hero-action"><a class="button button-primary" href="#mood">Start choosing</a></p>
 
         <figure class="art-placeholder">
           <p>City illustration placeholder</p>
@@ -76,7 +85,7 @@
         </figure>
       </section>
 
-      <form aria-label="Manhattan recommendation preferences">
+      <form class="preference-form" aria-label="Manhattan recommendation preferences">
         <!-- MOOD SELECTION SECTION -->
         <section id="mood" class="content-section" aria-labelledby="mood-title">
           <p class="step-number" aria-hidden="true">1</p>
@@ -84,7 +93,7 @@
           <p>What sounds good today?</p>
           <fieldset class="choice-group">
             <legend class="visually-hidden">Choose a mood</legend>
-            <div id="mood-options"></div>
+            <div id="mood-options" class="choice-grid mood-grid"></div>
             <noscript><p>Please enable JavaScript to load the mood choices.</p></noscript>
           </fieldset>
         </section>
@@ -96,14 +105,14 @@
           <p>Pick one kind of little detour.</p>
           <fieldset class="choice-group">
             <legend class="visually-hidden">Choose a place type</legend>
-            <button class="choice is-selected" type="button" aria-pressed="true">
-              <span aria-hidden="true">✓</span> Cafe
-            </button>
-            <button class="choice" type="button" aria-pressed="false">Bookstore</button>
-            <button class="choice" type="button" aria-pressed="false">Museum</button>
-            <button class="choice" type="button" aria-pressed="false">Park</button>
-            <button class="choice" type="button" aria-pressed="false">Library</button>
-            <button class="choice" type="button" aria-pressed="false">Restaurant</button>
+            <div class="choice-grid place-grid">
+              <button class="choice is-selected" type="button" aria-pressed="true">Cafe</button>
+              <button class="choice" type="button" aria-pressed="false">Bookstore</button>
+              <button class="choice" type="button" aria-pressed="false">Museum</button>
+              <button class="choice" type="button" aria-pressed="false">Park</button>
+              <button class="choice" type="button" aria-pressed="false">Library</button>
+              <button class="choice" type="button" aria-pressed="false">Restaurant</button>
+            </div>
           </fieldset>
         </section>
 
@@ -114,12 +123,12 @@
           <p>Where in Manhattan?</p>
           <fieldset class="choice-group">
             <legend class="visually-hidden">Choose an area</legend>
-            <button class="choice" type="button" aria-pressed="false">Downtown</button>
-            <button class="choice is-selected" type="button" aria-pressed="true">
-              <span aria-hidden="true">✓</span> Midtown
-            </button>
-            <button class="choice" type="button" aria-pressed="false">Uptown</button>
-            <button class="choice" type="button" aria-pressed="false">Anywhere</button>
+            <div class="choice-grid area-grid">
+              <button class="choice" type="button" aria-pressed="false">Downtown</button>
+              <button class="choice is-selected" type="button" aria-pressed="true">Midtown</button>
+              <button class="choice" type="button" aria-pressed="false">Uptown</button>
+              <button class="choice" type="button" aria-pressed="false">Anywhere</button>
+            </div>
           </fieldset>
         </section>
 
@@ -128,7 +137,7 @@
           <h2 id="summary-title" class="visually-hidden">Your choices</h2>
           <p class="selection-line">Quiet / Cafe / Midtown</p>
           <p>One thoughtful pick. No endless lists.</p>
-          <p>
+          <p class="summary-action">
             <a class="button button-primary" href="recommendation.html">
               Show my recommendation
             </a>

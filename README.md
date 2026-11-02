@@ -157,9 +157,60 @@ through the same submitted link.
 **Still missing (building before the layout assignment):**
 
 - [ ] Replace the labeled illustration placeholders with the final project illustrations when media is added.
-- [ ] Build the responsive desktop and mobile arrangements shown in the mockups.
+- [x] Build the responsive desktop and mobile arrangements shown in the mockups.
 - [ ] Connect the choice buttons to the summary and carry the selected values to the recommendation page.
 
 **One thing I couldn't figure out:**
 
 - I still need to choose the simplest way to preserve the user's mood, place type, and area across separate HTML pages without adding unnecessary complexity.
+
+## Assignment 7: Layout with CSS Grid
+
+### Mockup and layout evidence
+
+[Current high-fidelity mockups - Assignment 4 (PDF)](NateChen_Assignment4_Mockups.pdf)
+
+[Side-by-side 1440 px comparison](assignment7-submission/assignment7-layout-comparison.png)
+
+The page shell now uses CSS Grid. The hero and preference controls on the
+selection page, the recommendation view, and the place-detail view also use
+Grid to reproduce the arrangements established in Assignment 4. Flexbox is
+reserved for one-dimensional rows such as navigation, tags, and paired action
+buttons.
+
+### Layout note
+
+I used CSS Grid for the page shell and the main content groups because the
+mockup has clear rows and columns. On the selection page, the hero becomes two
+columns on desktop, and the mood, place, and area sections sit side by side.
+The recommendation page places the illustration next to the place information,
+while the detail page places the visit panel beside the story. At widths below
+800px, those larger sections return to one column. The mood and area choices
+stay in two columns, and the place choices stay in three, matching my Assignment
+4 notes. Flexbox handles only single rows such as navigation, tags, and action
+buttons. I also used `minmax(0, 1fr)` and tested at 375px and 1440px to prevent
+horizontal scrolling.
+
+### Weekly update - November 2, 2026
+
+**Key changes.** Added the planned Grid page shell, gridded the hero and choice
+groups, and created desktop two-column layouts for recommendation and detail.
+The 800px media query switches between the mobile stack and the desktop
+arrangements documented in Assignment 4. Mobile navigation now uses a compact
+48px-or-larger menu control.
+
+**Checks.** Browser tests covered all three pages at 375px and 1440px. Each page
+kept one `h1`, none produced horizontal scrolling, and the six JavaScript mood
+buttons still rendered with one initial selection.
+
+**Next step.** Replace the illustration placeholders with final media and then
+connect the selection controls to the summary and recommendation state.
+
+### Assignment 7 AI use acknowledgement
+
+OpenAI Codex was used to inspect the Assignment 4 PDF, implement the CSS Grid
+and responsive CSS, update the semantic HTML classes, run browser checks at the
+two mockup widths, and prepare the side-by-side comparison. The layout
+decisions came from my existing Assignment 4 annotations: mobile stacking,
+desktop side-by-side content, three desktop preference columns, and the stated
+two- and three-column choice groups.
