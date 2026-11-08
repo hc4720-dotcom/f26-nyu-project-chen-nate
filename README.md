@@ -1,5 +1,36 @@
 # NYC by Mood
 
+**Latest mockups:** [Assignment 4 high-fidelity mockups](NateChen_Assignment4_Mockups.pdf)
+
+**Live site:** Not published yet
+
+## Project Log
+
+### Week 8 — November 8, 2026
+
+**State Plan**
+
+- **User story:** As a young adult who wants a Manhattan suggestion quickly, I want my mood choice to appear immediately so that I know the page understood me before I continue.
+- **What does the page remember?** The mood the user most recently selected.
+- **What does it start at?** `quiet`, matching the Quiet button and the summary shown when the page first opens.
+- **What changes it?** Clicking one of the six mood buttons.
+- **What does the user see?** The selected button changes, the mood in the summary changes, and a short confirmation explains what the choice will prioritize.
+- **What does the `if/else` decide?** It decides whether to show the calm, low-noise confirmation for Quiet or a confirmation using the selected mood for every other choice.
+
+**What changed:** To complete after building and testing the interaction.
+
+**What was hard, and what I tried:** To complete after building and testing the interaction.
+
+**What happened when I tried to break it:** To complete after building and testing the interaction.
+
+**What I learned or changed my mind about:** To complete after building and testing the interaction.
+
+**Question for Joey:** Is updating the current summary enough feedback for this step, or should a future version also carry the selected mood to the recommendation page?
+
+**Next week's goal:** Carry the completed preference choices into the recommendation view.
+
+**AI use:** I chose this interaction from the project user story and the next step already recorded in Week 7. After writing the State Plan, I used OpenAI Codex to help implement the JavaScript pattern, check repeated clicks, and revise this log. I reviewed the state name, the `if/else`, and the visible text so they match the interaction described above.
+
 NYC by Mood helps a young adult choose one thoughtful Manhattan destination
 without sorting through a long list of results. The user selects a mood, a type
 of place, and an area, then receives one recommendation and can open a detailed
