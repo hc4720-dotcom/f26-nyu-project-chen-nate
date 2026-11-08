@@ -17,13 +17,13 @@
 - **What does the user see?** The selected button changes, the mood in the summary changes, and a short confirmation explains what the choice will prioritize.
 - **What does the `if/else` decide?** It decides whether to show the calm, low-noise confirmation for Quiet or a confirmation using the selected mood for every other choice.
 
-**What changed:** To complete after building and testing the interaction.
+**What changed:** The mood buttons now change a `selectedMood` variable. The selected style and `aria-pressed` value move to the button the user clicked, and the summary and confirmation text update immediately. The starting screen still shows Quiet so the HTML and JavaScript begin in the same state.
 
-**What was hard, and what I tried:** To complete after building and testing the interaction.
+**What was hard, and what I tried:** The buttons are created by the Assignment 6 loop, so I needed one value to control the generated buttons and the summary instead of changing only the button that was clicked. I used each button's `data-mood` value to compare every button with `selectedMood`, then updated its class and `aria-pressed` value from that comparison.
 
-**What happened when I tried to break it:** To complete after building and testing the interaction.
+**What happened when I tried to break it:** I clicked Adventurous ten times and then switched quickly through Social, Quiet, Productive, Romantic, and Quiet. The page still showed exactly one selected mood, returned to the correct Quiet summary and confirmation, and produced no Console errors or warnings. I also checked the starting state and a normal Creative selection. At 375px, the new feedback stayed inside the viewport with no horizontal scrolling.
 
-**What I learned or changed my mind about:** To complete after building and testing the interaction.
+**What I learned or changed my mind about:** Changing a variable does not automatically change the page. The click handler has to update the visible text, selected class, and accessibility state separately. I also learned that one clear state value makes repeated clicks easier to keep consistent.
 
 **Question for Joey:** Is updating the current summary enough feedback for this step, or should a future version also carry the selected mood to the recommendation page?
 
