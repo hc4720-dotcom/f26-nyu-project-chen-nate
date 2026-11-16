@@ -22,6 +22,54 @@
 
 ## Project Log
 
+### Week 9 — November 15, 2026
+
+**What changed:** I reorganized the mood interaction around one `render()`
+function. The function clears the mood container, loops through the same six
+mood objects from Assignment 6, rebuilds the buttons, and uses `selectedMood`
+to decide the selected style and `aria-pressed` value. It also calculates the
+summary and feedback message. Each click handler now does only two things: it
+changes `selectedMood` and calls `render()`.
+
+**Testing:**
+
+- Starting state: six mood buttons appeared, only Quiet was selected, and the
+  summary and calm/low-noise message both matched Quiet.
+- Normal case: after choosing Creative, only Creative was selected and both
+  lines of text changed to the Creative version.
+- Limit case: after clicking Adventurous ten times, there were still six
+  buttons and exactly one selected button. No duplicate buttons appeared.
+- State/UI agreement: I quickly changed Social → Quiet → Productive → Romantic
+  → Quiet. The selected button, `aria-pressed`, summary, and feedback all ended
+  on Quiet. The Console showed no errors or warnings.
+
+**Patching vs. rendering:** In Assignment 8, the click handler patched several
+parts of the page one by one. It changed button classes, ARIA values, the
+summary, and the feedback directly. That worked, but it made the click handler
+responsible for remembering every visible update. In this version, the click
+handler changes the state and `render()` redraws everything that depends on
+that state. This is easier to check because the same state always produces the
+same screen.
+
+**What was hard, and what I tried:** The buttons themselves are created inside
+`render()`, so they are replaced after every click. I attached each listener
+while rebuilding its button. I also used `find()` to get the complete mood
+object for the current state, which keeps the visible label connected to the
+array instead of repeating it in another list.
+
+**Question for Joey:** For the next step, should place type and area become part
+of one shared state object, or is it clearer at this stage to add them as two
+more state variables?
+
+**Next week's goal:** Make place type and area follow the same state-and-render
+pattern, then use the three choices on the recommendation page.
+
+**AI use:** I wrote the interaction goal and reviewed the page behavior. I used
+OpenAI Codex to help refactor the existing Assignment 8 code into a `render()`
+function, run the browser tests listed above, and organize this Week 9 log. I
+checked that the code still uses my original mood choices, default selection,
+summary format, and feedback language.
+
 ### Week 8 — November 8, 2026
 
 **State Plan**
