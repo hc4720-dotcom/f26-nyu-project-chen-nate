@@ -4,6 +4,22 @@
 
 **Live site:** Not published yet
 
+## Assignment 9 Render Plan
+
+- **State:** The page will keep `selectedMood`, starting with `"quiet"`.
+- **What `render()` will draw:** It will clear the mood container, loop through
+  the existing `moods` array, rebuild all six buttons, mark the button that
+  agrees with `selectedMood`, and update the summary and feedback message.
+- **What a click will do:** A mood-button click will only change
+  `selectedMood` and call `render()` again. The click handler will not directly
+  change classes, ARIA values, or summary text.
+- **Conditional output:** `render()` will use the current state to show the
+  special calm/low-noise message for Quiet and a mood-specific message for the
+  other five choices.
+- **Checks:** I will test the starting state, a normal change, repeated clicks,
+  rapid changes between moods, and whether the visible button, summary, and
+  feedback all agree with the state.
+
 ## Project Log
 
 ### Week 8 — November 8, 2026
