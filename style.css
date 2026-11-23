@@ -258,6 +258,23 @@ figure {
   margin-top: var(--space-2);
 }
 
+.select-label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+
+.area-select {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  color: var(--color-text);
+  font: inherit;
+  min-height: 48px;
+  padding: 12px 44px 12px var(--space-2);
+  width: 100%;
+}
+
 /* Each choice group uses a stable grid so options stay easy to compare at both mockup widths. */
 .choice-grid {
   display: grid;
