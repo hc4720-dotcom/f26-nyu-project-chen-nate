@@ -4,6 +4,76 @@
 
 **Live site:** Not published yet
 
+## Project Log
+
+### Week 10 — November 23, 2026
+
+**Event Plan**
+
+- **User story:** As a young adult who wants one Manhattan suggestion quickly,
+  I want to choose an area from a short list so that the recommendation can
+  reflect where I am willing to go.
+- **The event:** A `change` event on the Manhattan area `<select>`. It fits the
+  task because the user is choosing one option from a defined list, and the
+  event fires only when that choice changes.
+- **State:** The page remembers `selectedArea`, starting at `"midtown"` to
+  match the current design. This is a new state variable kept separate from
+  the existing `selectedMood`, following Joey's Assignment 9 feedback.
+- **My function:** `isSelectedArea(area)` asks whether one area object matches
+  `selectedArea`. The area object goes in as the parameter, and a Boolean comes
+  back. `render()` will use that answer when rebuilding the select options.
+
+**What changed:** I replaced the four static area buttons with one labeled
+select. Its `change` handler reads `event.target.value`, saves it as
+`selectedArea`, and calls `render()`. The handler does not patch the summary or
+the options directly. `render()` rebuilds the options, uses
+`isSelectedArea(area)` to choose the active one, and updates the summary from
+the current mood and area.
+
+**Why redraw on every event:** The visible select and summary both depend on
+the same state, so redrawing them together prevents them from disagreeing. It
+also leaves the event handler with one clear job: record the user's choice and
+ask the page to render that choice.
+
+**Testing:**
+
+- Starting state: the select and summary both showed Midtown.
+- Normal case: choosing Downtown changed the summary to
+  `Quiet / Cafe / Downtown`.
+- Limit case: I quickly changed Uptown → Anywhere → Midtown. The select ended
+  on Midtown, the summary also ended on Midtown, and there was still exactly
+  one selected option.
+- Combined state: after choosing Creative and Downtown, the page showed six
+  mood buttons, Creative remained selected, and the summary read
+  `Creative / Cafe / Downtown`.
+
+**What was hard, and what I tried:** Rebuilding the options inside `render()`
+could have reset the user's choice. I used the Boolean returned by
+`isSelectedArea(area)` to mark exactly one option as selected each time the
+view is rebuilt. I kept the area in its own variable because that is clearer
+with only two pieces of state and follows Joey's Assignment 9 feedback.
+
+**No-match state:** This interaction uses a fixed select with four valid
+options, so the user cannot enter an unknown value. A no-match message does not
+apply to this version.
+
+**What I learned:** A `change` event gives me the new form value through the
+event object. I also learned that a small function can answer one question for
+`render()` without changing the page itself.
+
+**Question for Joey:** Is rebuilding a short select inside `render()` a good
+way to keep it state-driven, or would you leave its options in the HTML and
+only calculate the selected value at this scale?
+
+**Next week's goal:** Carry the mood and area choices into the recommendation
+screen and keep them available if the visitor returns to the form.
+
+**AI use:** I chose the area interaction from my existing user story and the
+next step in my Week 9 log. I used OpenAI Codex to help implement the
+event-state-render pattern, test the cases recorded above, and organize this
+Week 10 entry. I reviewed the event, state name, default area, visible labels,
+and final behavior so they match my project decisions and Joey's feedback.
+
 ## Assignment 9 Render Plan
 
 - **State:** The page will keep `selectedMood`, starting with `"quiet"`.
@@ -19,8 +89,6 @@
 - **Checks:** I will test the starting state, a normal change, repeated clicks,
   rapid changes between moods, and whether the visible button, summary, and
   feedback all agree with the state.
-
-## Project Log
 
 ### Week 9 — November 15, 2026
 
