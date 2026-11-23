@@ -121,15 +121,13 @@
           <p class="step-number" aria-hidden="true">3</p>
           <h2 id="area-title">Your area</h2>
           <p>Where in Manhattan?</p>
-          <fieldset class="choice-group">
-            <legend class="visually-hidden">Choose an area</legend>
-            <div class="choice-grid area-grid">
-              <button class="choice" type="button" aria-pressed="false">Downtown</button>
-              <button class="choice is-selected" type="button" aria-pressed="true">Midtown</button>
-              <button class="choice" type="button" aria-pressed="false">Uptown</button>
-              <button class="choice" type="button" aria-pressed="false">Anywhere</button>
-            </div>
-          </fieldset>
+          <label class="select-label" for="area-select">Manhattan area</label>
+          <select id="area-select" class="area-select" name="area">
+            <option value="downtown">Downtown</option>
+            <option value="midtown" selected>Midtown</option>
+            <option value="uptown">Uptown</option>
+            <option value="anywhere">Anywhere</option>
+          </select>
         </section>
 
         <!-- SELECTION SUMMARY AND PRIMARY ACTION -->
